@@ -13,16 +13,21 @@ import java.util.List;
 @RequestMapping("/customer")
 public class CustomerController {
     @Autowired
-    CustomerService custService;
+    CustomerService customerService;
 
-    @RequestMapping(value="/all", method= RequestMethod.GET)
-    public List<Customer> getAllCustomers(){
-        return custService.getAllCustomers();
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public List<Customer> getAllCustomers() {
+        return customerService.getAllCustomers();
     }
 
-    @RequestMapping(value="/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody()
-    public Customer addCustomer(@RequestBody Customer customer){
-        return this.custService.addCustomer(customer);
+    public Customer addCustomer(@RequestBody Customer customer) {
+        return this.customerService.addCustomer(customer);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Customer getCustomer(@PathVariable("id") Integer customerId){
+        return this.customerService.getCustomer(customerId);
     }
 }

@@ -13,12 +13,16 @@ public class CustomerService {
     @Autowired
     CustomerDAO customerDao;
 
-    public List<Customer> getAllCustomers(){
+    public List<Customer> getAllCustomers() {
         return this.customerDao.findAll();
     }
 
-    public Customer addCustomer(Customer customer){
+    public Customer addCustomer(Customer customer) {
         return this.customerDao.save(customer);
+    }
+
+    public Customer getCustomer(Integer customerId) {
+        return this.customerDao.getOne(customerId);
     }
 }
 
