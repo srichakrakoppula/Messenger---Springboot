@@ -19,15 +19,26 @@ public class MessageService {
         return this.messageDao.getOne(messageId);
     }
 
-    public List<Message> getMessagesByCustomer(Integer customerId){
+    public Message addMessage(Message message){
+        return this.messageDao.save(message);
+    }
+
+//    public List<Message> getMessagesByCustomer(Integer customerId){
+//        List<Message> messages = null;
+//        try {
+//            messages = this.messageDao.findMessagesByCustomerRef(customerId).get();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//        }
+//        return messages;
+//    }
+
+
+        public List<Message> getMessagesByCustomer(Integer customerId){
         List<Message> messages = null;
-        try {
-            messages = this.messageDao.findMessagesByCustomerRef(customerId).get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+        messages = this.messageDao.findMessagesByCustomerRef(customerId);
         return messages;
     }
 }

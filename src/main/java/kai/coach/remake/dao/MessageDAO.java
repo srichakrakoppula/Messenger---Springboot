@@ -13,7 +13,8 @@ import java.util.concurrent.Future;
 @Repository
 public interface MessageDAO extends JpaRepository<Message, Integer> {
 
-    @Async
-    @Query("SELECT M FROM MESSAGES M WHERE M.CUSTOMER_REF = :customerId")
-    Future<List<Message>> findMessagesByCustomerRef(@Param("customerId") Integer customerId);
+//    @Async
+    @Query(value = "SELECT M FROM Message M WHERE M.customerRef = :customerId")
+//    Future<List<Message>> findMessagesByCustomerRef(@Param("customerId") Integer customerId);
+    List<Message> findMessagesByCustomerRef(@Param("customerId") Integer customerId);
 }
