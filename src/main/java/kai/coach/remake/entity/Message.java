@@ -24,16 +24,16 @@ public class Message {
     private Character isIncoming;
 
     @Column(name = "CUSTOMER_REF")
-    private String customerRef;
+    private Integer customerRef;
 
     @Column(name = "AGENT_REF")
-    private String agentRef;
+    private Integer agentRef;
 
     @Column(name="CREATED_AT")
     private LocalDate createdAt;
 
     @Column(name="CREATED_BY")
-    private LocalDate createdBy;
+    private Integer createdBy;
 
     public Integer getId() {
         return id;
@@ -67,19 +67,19 @@ public class Message {
         this.isIncoming = isIncoming;
     }
 
-    public String getCustomerRef() {
+    public Integer getCustomerRef() {
         return customerRef;
     }
 
-    public void setCustomerRef(String customerRef) {
+    public void setCustomerRef(Integer customerRef) {
         this.customerRef = customerRef;
     }
 
-    public String getAgentRef() {
+    public Integer getAgentRef() {
         return agentRef;
     }
 
-    public void setAgentRef(String agentRef) {
+    public void setAgentRef(Integer agentRef) {
         this.agentRef = agentRef;
     }
 
@@ -91,11 +91,11 @@ public class Message {
         this.createdAt = createdAt;
     }
 
-    public LocalDate getCreatedBy() {
+    public Integer getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(LocalDate createdBy) {
+    public void setCreatedBy(Integer createdBy) {
         this.createdBy = createdBy;
     }
 }

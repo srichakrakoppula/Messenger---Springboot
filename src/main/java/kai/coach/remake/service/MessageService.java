@@ -38,6 +38,7 @@ public class MessageService {
 
         public List<Message> getMessagesByCustomer(Integer customerId){
         List<Message> messages = null;
+//        System.out.println(customerId.toString());
         messages = this.messageDao.findMessagesByCustomerRef(customerId);
         return messages;
     }

@@ -27,7 +27,7 @@ public class MessageController {
         return this.messageService.addMessage(message);
     }
 
-    @RequestMapping(value = "/customerRef={id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/customerRef/{id}", method = RequestMethod.GET)
     public List<Message> getMessageByCustomer(@PathVariable("id") Integer customerId){
         return this.messageService.getMessagesByCustomer(customerId);
     }
